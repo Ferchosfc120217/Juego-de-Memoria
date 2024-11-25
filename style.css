@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+    position: relative;
+    overflow: hidden;
+    transform: rotateY(180deg); /* Ocultando la carta por defecto */
+    transition: transform 0.5s ease-in-out;
+}
+
+.card.flipped {
+    transform: rotateY(0deg); /* Mostrar la carta cuando se voltea */
+    background-color: white;
+}
+
+.card .image {
+    display: none;
+    font-size: 2em;
+}
+
+.card.flipped .image {
+    display: block; /* Mostrar la imagen cuando la carta está volteada */
+}
+#stats {
+    margin-top: 20px;
+    font-size: 18px;
+}
